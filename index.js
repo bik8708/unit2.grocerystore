@@ -38,9 +38,13 @@ function getUppercaseNames(items) {
  * @returns {Item} - the item in `items` with the given `id`
  */ // TODO: use `find`
 
+// function getItemById(items, id) {
+//   const itemByID = items.find((item) => item.id === id);
+//   return itemByID;
+// }
+
 function getItemById(items, id) {
-  const itemByID = items.find((item) => item.id === id);
-  return itemByID;
+  return items.find((item) => item.id === id);
 }
 
 /**
@@ -63,9 +67,13 @@ function getItemPriceByName(items, name) {
  * @returns {Item[]} array of items that belong to the given `category`
  */ // TODO: use `filter`
 
+// function getItemsByCategory(items, category) {
+//   const itemsInCategory = items.filter((item) => item.category === category);
+//   return itemsInCategory;
+// }
+
 function getItemsByCategory(items, category) {
-  const itemsInCategory = items.filter((item) => item.category === category);
-  return itemsInCategory;
+  return items.filter((item) => item.category === category);
 }
 
 /**
@@ -73,12 +81,19 @@ function getItemsByCategory(items, category) {
  * @returns {number} the total quantity of all items
  */ // TODO: use `reduce`
 
+// function countItems(items) {
+//   let itemCountTotal = items.reduce(
+//     (itemTotal, currentItem) => itemTotal + currentItem.quantity,
+//     0
+//   );
+//   return itemCountTotal;
+// }
+
 function countItems(items) {
-  let itemCountTotal = items.reduce(
-    (accumulator, currentItem) => accumulator + currentItem.quantity,
+  return items.reduce(
+    (itemTotal, currentItem) => itemTotal + currentItem.quantity,
     0
   );
-  return itemCountTotal;
 }
 
 /**
@@ -86,13 +101,21 @@ function countItems(items) {
  * @returns {number} the cost of all given items
  */ // TODO: use `reduce`
 
+// function calculateTotalPrice(items) {
+//   let itemTotal = items.reduce(
+//     (itemTotal, currentItem) =>
+//       (itemTotal += currentItem.price * currentItem.quantity),
+//     0
+//   );
+//   return itemTotal;
+// }
+
 function calculateTotalPrice(items) {
-  let itemTotal = items.reduce(
+  return items.reduce(
     (itemTotal, currentItem) =>
       (itemTotal += currentItem.price * currentItem.quantity),
     0
   );
-  return itemTotal;
 }
 
 // --------------------- DO NOT CHANGE THE CODE BELOW ------------------------ //
